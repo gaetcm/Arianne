@@ -1,6 +1,7 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import Logo from "../src/assets/components/Logo";
+import Pic from "../src/assets/img/purplerocket.webp";
+import Footer from "./assets/components/Footer";
 import "./App.css";
 
 function App() {
@@ -10,61 +11,121 @@ function App() {
 
   return (
     <>
+      <header>
+        <div className="logo">
+          <Logo src={Pic} />
+        </div>
+        <h1 className="offside-regular">Ready To Go</h1>
+      </header>
+
       <div className="container">
-        <div className="bouttons">
-          <button
-            onClick={() => {
-              setSwitch1(!switch1);
-            }}
-            className={switch1 === true ? "purple" : "gray"}
-          >
-            ON
-          </button>
+        <div className="launcher">
+          <div className="bouttons">
+            <button
+              onClick={() => {
+                setSwitch1(!switch1);
+              }}
+              className={
+                switch1 === true
+                  ? "purple offside-regular"
+                  : "gray offside-regular"
+              }
+            >
+              ON
+            </button>
 
-          <button
-            onClick={() => {
-              setSwitch2(!switch2);
-            }}
-            className={switch2 === true ? "purple" : "gray"}
-          >
-            ON
-          </button>
-          <button
-            onClick={() => {
-              setSwitch3(!switch3);
-            }}
-            className={switch3 === true ? "purple" : "gray"}
-          >
-            ON
-          </button>
+            <button
+              onClick={() => {
+                setSwitch2(!switch2);
+              }}
+              className={
+                switch2 === true
+                  ? "purple offside-regular"
+                  : "gray offside-regular"
+              }
+            >
+              ON
+            </button>
+            <button
+              onClick={() => {
+                setSwitch3(!switch3);
+              }}
+              className={
+                switch3 === true
+                  ? "purple offside-regular"
+                  : "gray offside-regular"
+              }
+            >
+              ON
+            </button>
 
-          <button
-            onClick={() => {
-              setSwitch1(!switch1);
-            }}
-            className={switch1 === false ? "purple" : "gray"}
+            <button
+              onClick={() => {
+                setSwitch1(!switch1);
+              }}
+              className={
+                switch1 === false
+                  ? "purple offside-regular"
+                  : "gray offside-regular"
+              }
+            >
+              OFF
+            </button>
+            <button
+              onClick={() => {
+                setSwitch2(!switch2);
+              }}
+              className={
+                switch2 === false
+                  ? "purple offside-regular"
+                  : "gray offside-regular"
+              }
+            >
+              OFF
+            </button>
+            <button
+              onClick={() => {
+                setSwitch3(!switch3);
+              }}
+              className={
+                switch3 === false
+                  ? "purple offside-regular"
+                  : "gray offside-regular"
+              }
+            >
+              OFF
+            </button>
+          </div>
+
+          <div
+            className={
+              switch3 && switch2 && switch1 === true
+                ? "green offside-regular"
+                : "red offside-regular"
+            }
           >
-            OFF
-          </button>
+            {switch3 && switch2 && switch1 === true
+              ? "GO !!! 🚀"
+              : "NO WAY ! ✋"}
+          </div>
+        </div>
+        <div className="reset offside-regular">
+          {" "}
           <button
+            className="blue offside-regular"
             onClick={() => {
-              setSwitch2(!switch2);
+              setSwitch1(false);
+              setSwitch2(false);
+              setSwitch3(false);
             }}
-            className={switch2 === false ? "purple" : "gray"}
           >
-            OFF
-          </button>
-          <button
-            onClick={() => {
-              setSwitch3(!switch3);
-            }}
-            className={switch3 === false ? "purple" : "gray"}
-          >
-            OFF
+            RESET
           </button>
         </div>
-        <div className="red">NO WAY !</div>
       </div>
+      <footer className="offside-regular">
+        <Footer text=" Made at Le Reacteur by Gaëtan (ꈍᴗꈍ) 🚀" />
+      </footer>
     </>
   );
 }
