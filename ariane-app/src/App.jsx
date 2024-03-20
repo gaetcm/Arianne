@@ -12,13 +12,56 @@ function App() {
     <>
       <div className="container">
         <div className="bouttons">
-          <button className="purple">ON</button>
+          <button
+            onClick={() => {
+              setSwitch1(!switch1);
+            }}
+            className={switch1 === true ? "purple" : "gray"}
+          >
+            ON
+          </button>
 
-          <button>ON</button>
-          <button>ON</button>
-          <button>OFF</button>
-          <button>OFF</button>
-          <button>OFF</button>
+          <button
+            onClick={() => {
+              setSwitch2(!switch2);
+            }}
+            className={switch2 === true ? "purple" : "gray"}
+          >
+            ON
+          </button>
+          <button
+            onClick={() => {
+              setSwitch3(!switch3);
+            }}
+            className={switch3 === true ? "purple" : "gray"}
+          >
+            ON
+          </button>
+
+          <button
+            onClick={() => {
+              setSwitch1(!switch1);
+            }}
+            className={switch1 === false ? "purple" : "gray"}
+          >
+            OFF
+          </button>
+          <button
+            onClick={() => {
+              setSwitch2(!switch2);
+            }}
+            className={switch2 === false ? "purple" : "gray"}
+          >
+            OFF
+          </button>
+          <button
+            onClick={() => {
+              setSwitch3(!switch3);
+            }}
+            className={switch3 === false ? "purple" : "gray"}
+          >
+            OFF
+          </button>
         </div>
         <div className="red">NO WAY !</div>
       </div>
