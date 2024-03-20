@@ -12,14 +12,7 @@ function App() {
     <>
       <div className="container">
         <div className="bouttons">
-          <button
-            onClick={() => {
-              setSwitch1(true);
-            }}
-            style={{ backgroundColor: switch1 === true ? "purple" : "" }}
-          >
-            ON
-          </button>
+          <button className="purple">ON</button>
 
           <button>ON</button>
           <button>ON</button>
